@@ -1,0 +1,53 @@
+/* =========================================
+   Borderless Mode (3x3 Sem Borda)
+   ========================================= */
+
+.sdpp-mode-borderless .sdpp-polaroid-frame {
+    padding: 0;
+    background: transparent;
+    box-shadow: var(--sdpp-shadow-lg);
+    /* Keep shadow for visibility against bg */
+    border-radius: 0;
+}
+
+.sdpp-mode-borderless .sdpp-cropper-wrapper {
+    border-radius: 0;
+    background: #ccc;
+    /* Placeholder color similar to spec */
+    aspect-ratio: 25/32 !important;
+    /* Force new aspect ratio */
+}
+
+/* Hide footer in editor for borderless mode (since no text) */
+.sdpp-mode-borderless .sdpp-polaroid-footer {
+    display: none;
+}
+
+/* Adjust Grid Preview for Borderless */
+.sdpp-mode-borderless .sdpp-grid-container {
+    padding: 2px !important;
+    /* 2mm visually approx */
+    gap: 1px !important;
+    /* 0.3mm visually approx */
+    background: white;
+    /* Sheet background */
+}
+
+.sdpp-mode-borderless .sdpp-grid-item {
+    border: none !important;
+    border-radius: 0 !important;
+    background: #ccc;
+    box-shadow: none !important;
+    /* Flat look inside sheet */
+    aspect-ratio: 25/32 !important;
+}
+
+.sdpp-mode-borderless .sdpp-grid-item img {
+    border-radius: 0 !important;
+}
+
+/* Hide or adjust controls that don't apply */
+.sdpp-mode-borderless .sdpp-text-overlay,
+.sdpp-mode-borderless .sdpp-emoji-overlay {
+    display: none !important;
+}

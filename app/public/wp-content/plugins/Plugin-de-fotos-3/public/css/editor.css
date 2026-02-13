@@ -1,0 +1,1882 @@
+﻿/**
+ * Editor Styles for Polaroids Customizadas
+ */
+
+/* Reset & Variables */
+:root {
+    --sdpp-primary: #ff732e;
+    --sdpp-primary-hover: #e65e1b;
+    --sdpp-primary-light: rgba(255, 115, 46, 0.1);
+    --sdpp-success: #22c55e;
+    --sdpp-success-light: rgba(34, 197, 94, 0.1);
+    --sdpp-warning: #f59e0b;
+    --sdpp-danger: #ef4444;
+    --sdpp-danger-light: rgba(239, 68, 68, 0.1);
+    --sdpp-gray-50: #f9fafb;
+    --sdpp-gray-100: #f3f4f6;
+    --sdpp-gray-200: #e5e7eb;
+    --sdpp-gray-300: #d1d5db;
+    --sdpp-gray-400: #9ca3af;
+    --sdpp-gray-500: #6b7280;
+    --sdpp-gray-600: #4b5563;
+    --sdpp-gray-700: #374151;
+    --sdpp-gray-800: #1f2937;
+    --sdpp-gray-900: #111827;
+    --sdpp-radius: 12px;
+    --sdpp-radius-sm: 8px;
+    --sdpp-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --sdpp-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --sdpp-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+    --sdpp-header-height: 64px;
+    --sdpp-footer-height: 72px;
+    --sdpp-sidebar-width: 320px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Main Container */
+.sdpp-editor {
+    font-family: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #ff9e6f 0%, #d8613c 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--sdpp-gray-800);
+}
+
+.sdpp-editor h1,
+.sdpp-editor h2,
+.sdpp-editor h3,
+.sdpp-editor h4,
+.sdpp-editor h5,
+.sdpp-editor h6 {
+    font-family: 'Inter Tight', sans-serif;
+}
+
+/* Header */
+.sdpp-editor-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    height: var(--sdpp-header-height);
+    border-bottom: 1px solid var(--sdpp-gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sdpp-editor-header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.sdpp-editor-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sdpp-logo-icon {
+    display: flex;
+    align-items: center;
+}
+
+.sdpp-logo-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #000;
+}
+
+.sdpp-logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Inter Tight', sans-serif;
+    background: linear-gradient(135deg, var(--sdpp-primary), #ff9e6f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sdpp-editor-order-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sdpp-order-label {
+    color: var(--sdpp-gray-500);
+    font-size: 14px;
+}
+
+.sdpp-order-id {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.sdpp-store-badge {
+    padding: 4px 12px;
+    background: var(--sdpp-primary-light);
+    color: var(--sdpp-primary);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sdpp-editor-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sdpp-progress-text {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.sdpp-progress-bar {
+    width: 120px;
+    height: 6px;
+    background: var(--sdpp-gray-200);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.sdpp-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sdpp-primary), #ff9e6f);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Main Content */
+.sdpp-editor-main {
+    flex: 1;
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 24px;
+    gap: 24px;
+}
+
+/* Sidebar */
+.sdpp-editor-sidebar {
+    width: var(--sdpp-sidebar-width);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sdpp-upload-section,
+.sdpp-thumbnails-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--sdpp-radius);
+    padding: 20px;
+    box-shadow: var(--sdpp-shadow-lg);
+}
+
+.sdpp-upload-section h3,
+.sdpp-thumbnails-section h3 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--sdpp-gray-800);
+    font-family: 'Inter Tight', sans-serif;
+}
+
+/* Upload Dropzone */
+.sdpp-upload-dropzone {
+    border: 2px dashed var(--sdpp-gray-300);
+    border-radius: var(--sdpp-radius-sm);
+    padding: 32px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.sdpp-upload-dropzone:hover,
+.sdpp-upload-dropzone.dragover {
+    border-color: var(--sdpp-primary);
+    background: var(--sdpp-primary-light);
+}
+
+.sdpp-dropzone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sdpp-dropzone-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.sdpp-dropzone-icon svg {
+    width: 64px;
+    height: 64px;
+    fill: var(--sdpp-primary);
+}
+
+.sdpp-dropzone-content p {
+    margin: 0;
+    color: var(--sdpp-gray-600);
+    font-size: 14px;
+}
+
+.sdpp-dropzone-or {
+    color: var(--sdpp-gray-400);
+    font-size: 12px;
+}
+
+.sdpp-upload-hint {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: var(--sdpp-gray-500);
+    text-align: center;
+}
+
+/* Thumbnails */
+.sdpp-thumbnails-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.sdpp-thumbnails-header h3 {
+    margin: 0 !important;
+}
+
+.sdpp-thumbnails-section {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.sdpp-thumbnails-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    overflow-y: auto;
+    flex: 1;
+    max-height: 400px;
+    padding: 4px;
+}
+
+.sdpp-thumbnail {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: var(--sdpp-radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--sdpp-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sdpp-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: var(--sdpp-shadow-lg);
+}
+
+.sdpp-thumbnail.active {
+    box-shadow: 0 0 0 3px var(--sdpp-primary), var(--sdpp-shadow);
+}
+
+.sdpp-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sdpp-thumbnail-checkbox {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--sdpp-gray-300);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.sdpp-thumbnail-checkbox.checked {
+    background: var(--sdpp-primary);
+    border-color: var(--sdpp-primary);
+    color: white;
+}
+
+.sdpp-thumbnail-delete {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.sdpp-thumbnail-delete:hover {
+    transform: scale(1.1);
+}
+
+.sdpp-thumbnail-number {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.sdpp-bulk-actions {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--sdpp-gray-200);
+}
+
+/* Preview Area */
+.sdpp-editor-preview {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: var(--sdpp-radius);
+    box-shadow: var(--sdpp-shadow-lg);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Empty State */
+.sdpp-empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.sdpp-empty-icon {
+    margin-bottom: 24px;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+}
+
+.sdpp-empty-icon svg {
+    width: 100px;
+    height: 100px;
+    fill: var(--sdpp-primary);
+}
+
+.sdpp-empty-state h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    color: var(--sdpp-gray-700);
+    font-family: 'Inter Tight', sans-serif;
+}
+
+.sdpp-empty-state p {
+    margin: 0;
+    color: var(--sdpp-gray-500);
+}
+
+/* Photo Editor */
+.sdpp-photo-editor {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.sdpp-photo-editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--sdpp-gray-200);
+}
+
+.sdpp-photo-editor-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+.sdpp-editor-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sdpp-nav-indicator {
+    font-size: 14px;
+    color: var(--sdpp-gray-600);
+}
+
+/* Cropper Container */
+.sdpp-cropper-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: #e5c8bc;
+}
+
+.sdpp-polaroid-frame {
+    background: white;
+    padding: 12px 12px 12px;
+    /* Reduced bottom padding as footer handles it */
+    border-radius: 4px;
+    box-shadow: var(--sdpp-shadow-xl);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sdpp-cropper-wrapper {
+    aspect-ratio: 25/28;
+    /* Default: 3x3 bordered (634x710px) */
+    overflow: hidden;
+    border-radius: 2px;
+    background: #f0f0f0;
+    position: relative;
+    touch-action: none;
+}
+
+.sdpp-editor-final-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 50;
+    pointer-events: none;
+    display: block;
+}
+
+/* Base image: show fully contained and centered while Cropper initializes */
+.sdpp-cropper-wrapper>#cropper-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.sdpp-cropper-wrapper .cropper-container {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 40;
+    touch-action: none;
+}
+
+/* Hide the original image element once Cropper has created its own internal image */
+.sdpp-cropper-wrapper.sdpp-cropper-active>#cropper-image {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Cropper marks the source image as hidden; never override that */
+.sdpp-cropper-wrapper>#cropper-image.cropper-hidden {
+    display: none !important;
+}
+
+/* Local loading overlay for cropper interactions (zoom/move) */
+.sdpp-cropper-loading-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 60;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+.sdpp-cropper-loading-spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: sdpp-cropper-spin 0.7s linear infinite;
+}
+
+@keyframes sdpp-cropper-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   Navigation Transition Animation
+   ========================================== */
+.sdpp-cropper-container {
+    position: relative;
+}
+
+.sdpp-polaroid-frame {
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.sdpp-polaroid-frame.sdpp-transitioning {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sdpp-polaroid-frame.sdpp-transitioning.sdpp-slide-left {
+    transform: translateX(-30px);
+}
+
+.sdpp-polaroid-frame.sdpp-slide-right {
+    transform: translateX(30px);
+}
+
+/* Slide-in from opposite direction */
+.sdpp-polaroid-frame.sdpp-slide-enter-left {
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+.sdpp-polaroid-frame.sdpp-slide-enter-right {
+    transform: translateX(-30px);
+    opacity: 0;
+}
+
+/* Transition loading spinner overlay */
+.sdpp-nav-loading-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 70;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.sdpp-nav-loading-overlay.active {
+    display: flex;
+}
+
+.sdpp-nav-loading-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--sdpp-gray-300);
+    border-top-color: var(--sdpp-primary);
+    border-radius: 50%;
+    animation: sdpp-cropper-spin 0.7s linear infinite;
+}
+
+.sdpp-polaroid-footer {
+    height: 80px;
+    /* Fixed height for text area */
+    position: relative;
+    overflow: hidden;
+    /* Constrain text drag to this area */
+    margin-top: 4px;
+    background: white;
+}
+
+#final-preview {
+    display: none !important;
+}
+
+.sdpp-final-preview {
+    display: none;
+    padding: 12px 24px 18px;
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 1px solid var(--sdpp-gray-200);
+}
+
+.sdpp-final-preview-inner {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.sdpp-final-preview-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--sdpp-gray-700);
+    margin-bottom: 8px;
+}
+
+.sdpp-final-preview-frame {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: var(--sdpp-shadow);
+    border: 1px solid var(--sdpp-gray-200);
+}
+
+.sdpp-final-preview-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sdpp-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through if needed, but elements handle events */
+    z-index: 10;
+}
+
+.sdpp-text-element {
+    position: absolute;
+    white-space: nowrap;
+    cursor: move;
+    user-select: none;
+    pointer-events: auto;
+    padding: 10px;
+    touch-action: none;
+    border: 1px dashed transparent;
+    transition: border-color 0.2s;
+    line-height: 1.2;
+    transform-origin: top left;
+    left: 0;
+    top: 0;
+    margin: 0;
+    transform: translate(0, 0);
+    /* x/y in JS will add to this or override */
+}
+
+/* Reset transform for JS controlled positioning if we use x/y directly from top/left 0 */
+/* The JS uses translate(x, y), so we should start at a predictable origin.
+   Let's keep it simple: Origin 0,0 is top-left of footer. JS centers it initially.
+*/
+
+
+.sdpp-text-element.active {
+    border-color: var(--sdpp-primary);
+    background: rgba(255, 115, 46, 0.05);
+}
+
+/* Emoji Overlay - Same positioning as text overlay */
+.sdpp-emoji-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 11;
+    /* Above text overlay */
+}
+
+.sdpp-emoji-element {
+    position: absolute;
+    cursor: move;
+    user-select: none;
+    pointer-events: auto;
+    padding: 10px;
+    touch-action: none;
+    border: 1px dashed transparent;
+    transition: border-color 0.2s;
+    line-height: 1;
+    transform-origin: top left;
+    left: 0;
+    top: 0;
+    margin: 0;
+    transform: translate(0, 0);
+}
+
+.sdpp-emoji-element.active {
+    border-color: var(--sdpp-success);
+    background: rgba(34, 197, 94, 0.05);
+}
+
+.sdpp-text-preview {
+    display: none;
+    /* Legacy */
+}
+
+/* Editor Controls */
+.sdpp-editor-controls {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    border-top: 1px solid var(--sdpp-gray-200);
+    flex-wrap: wrap;
+}
+
+.sdpp-control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sdpp-control-group label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sdpp-gray-600);
+    white-space: nowrap;
+}
+
+.sdpp-zoom-controls,
+.sdpp-rotate-controls,
+.sdpp-move-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#zoom-slider {
+    display: none;
+}
+
+.sdpp-zoom-controls input[type="range"] {
+    width: 100px;
+    accent-color: var(--sdpp-primary);
+}
+
+.sdpp-control-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.sdpp-control-text input {
+    flex: 1;
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--sdpp-gray-300);
+    border-radius: var(--sdpp-radius-sm);
+    font-size: 14px;
+}
+
+.sdpp-control-text input:focus {
+    outline: none;
+    border-color: var(--sdpp-primary);
+    box-shadow: 0 0 0 3px var(--sdpp-primary-light);
+}
+
+.sdpp-control-font select {
+    padding: 8px 12px;
+    border: 1px solid var(--sdpp-gray-300);
+    border-radius: var(--sdpp-radius-sm);
+    font-size: 14px;
+    min-width: 150px;
+    background: white;
+}
+
+/* Grid Preview */
+.sdpp-grid-preview {
+    padding: 24px;
+}
+
+.sdpp-grid-preview h3 {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.sdpp-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.sdpp-grid-item {
+    background: white;
+    padding: 8px 8px 32px;
+    border-radius: 4px;
+    box-shadow: var(--sdpp-shadow);
+}
+
+.sdpp-grid-item-image {
+    aspect-ratio: 1;
+    background: var(--sdpp-gray-100);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.sdpp-grid-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sdpp-grid-item-text {
+    text-align: center;
+    padding-top: 8px;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+/* Footer */
+.sdpp-editor-footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--sdpp-gray-200);
+    height: var(--sdpp-footer-height);
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+.sdpp-footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sdpp-footer-status {
+    font-size: 14px;
+    color: var(--sdpp-gray-600);
+}
+
+.sdpp-footer-right {
+    display: flex;
+    gap: 12px;
+}
+
+/* Buttons */
+.sdpp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--sdpp-radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Inter Tight', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.sdpp-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.sdpp-btn-primary {
+    background: linear-gradient(135deg, var(--sdpp-primary), #ff9e6f);
+    color: white;
+    box-shadow: 0 2px 4px rgba(255, 115, 46, 0.3);
+}
+
+.sdpp-btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 115, 46, 0.4);
+}
+
+.sdpp-btn-secondary {
+    background: var(--sdpp-gray-100);
+    color: var(--sdpp-gray-700);
+}
+
+.sdpp-btn-secondary:hover:not(:disabled) {
+    background: var(--sdpp-gray-200);
+}
+
+.sdpp-btn-danger {
+    background: var(--sdpp-danger-light);
+    color: var(--sdpp-danger);
+}
+
+.sdpp-btn-danger:hover:not(:disabled) {
+    background: var(--sdpp-danger);
+    color: white;
+}
+
+.sdpp-btn-text {
+    background: transparent;
+    color: var(--sdpp-primary);
+    padding: 6px 12px;
+}
+
+.sdpp-btn-text:hover:not(:disabled) {
+    background: var(--sdpp-primary-light);
+}
+
+.sdpp-btn-icon {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: var(--sdpp-gray-100);
+    color: var(--sdpp-gray-700);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.sdpp-btn-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
+.sdpp-btn-icon:hover:not(:disabled) {
+    background: var(--sdpp-gray-200);
+    color: var(--sdpp-primary);
+    transform: scale(1.05);
+}
+
+.sdpp-btn-icon:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.sdpp-btn-lg {
+    padding: 12px 28px;
+    font-size: 15px;
+}
+
+/* Modal */
+.sdpp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.sdpp-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.sdpp-modal-content {
+    position: relative;
+    background: white;
+    border-radius: var(--sdpp-radius);
+    padding: 48px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: var(--sdpp-shadow-xl);
+    animation: modalSlide 0.3s ease-out;
+}
+
+@keyframes modalSlide {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.sdpp-success-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.sdpp-success-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.sdpp-success-icon {
+    display: flex;
+    align-items: center;
+}
+
+.sdpp-success-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #22c55e;
+}
+
+.sdpp-email-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#customer-email {
+    flex: 1;
+    height: 56px;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: normal;
+    box-sizing: border-box;
+}
+
+#save-email-btn {
+    height: 56px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--sdpp-primary) 0%, #ff9e6f 100%);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+#save-email-btn:hover {
+    background: linear-gradient(135deg, #e66729 0%, #ff8a50 100%);
+    transform: translateY(-1px);
+}
+
+.sdpp-modal-content h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+    color: var(--sdpp-gray-800);
+}
+
+.sdpp-modal-content p {
+    margin: 0 0 8px;
+    color: var(--sdpp-gray-600);
+}
+
+.sdpp-order-number {
+    margin-top: 16px !important;
+    padding-top: 16px;
+    border-top: 1px solid var(--sdpp-gray-200);
+}
+
+/* Loading */
+.sdpp-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.sdpp-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--sdpp-gray-200);
+    border-top-color: var(--sdpp-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sdpp-loading p {
+    margin-top: 16px;
+    color: var(--sdpp-gray-600);
+    font-weight: 500;
+}
+
+/* Cropper.js overrides */
+.cropper-container {
+    border-radius: 2px;
+}
+
+.cropper-view-box {
+    border-radius: 0;
+}
+
+.cropper-face {
+    background: transparent;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .sdpp-editor-main {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .sdpp-editor-sidebar {
+        width: 100%;
+        order: 1;
+    }
+
+    .sdpp-editor-preview {
+        order: 2;
+        min-height: 500px;
+    }
+
+    .sdpp-thumbnails-grid {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sdpp-editor-header {
+        height: auto !important;
+        padding: 10px 0 !important;
+        /* 10px top and bottom */
+    }
+
+    .sdpp-editor-header-inner {
+        height: auto !important;
+        padding: 0 8px !important;
+        /* Minimal padding */
+        gap: 8px !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+    }
+
+    .sdpp-editor-logo {
+        order: 1;
+        flex: 0 0 auto;
+        /* Don't grow/shrink randomly */
+    }
+
+    .sdpp-logo-text {
+        display: none !important;
+        /* Force hide text */
+    }
+
+    .sdpp-logo-icon svg {
+        width: 24px;
+        height: 24px;
+        display: block;
+    }
+
+    /* Progress in Middle */
+    .sdpp-editor-progress {
+        order: 2;
+        flex: 1 1 auto;
+        /* Allow shrink/grow */
+        justify-content: center;
+        gap: 6px;
+        min-width: 0;
+        /* Allow flex item to shrink below content size if needed */
+        margin: 0 !important;
+    }
+
+    .sdpp-progress-text {
+        font-size: 11px;
+        /* Smaller */
+        white-space: nowrap;
+    }
+
+    .sdpp-progress-bar {
+        width: 50px !important;
+        /* Fixed small width */
+        flex-shrink: 0;
+    }
+
+    /* Order Info on Right */
+    .sdpp-editor-order-info {
+        order: 3;
+        display: flex !important;
+        align-items: center;
+        font-size: 11px;
+        gap: 4px;
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .sdpp-order-label {
+        display: block;
+        font-size: 10px;
+    }
+
+    .sdpp-order-id {
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .sdpp-store-badge {
+        padding: 2px 4px;
+        font-size: 9px;
+    }
+
+    .sdpp-photo-editor-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .sdpp-editor-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .sdpp-editor-controls {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .sdpp-control-group {
+        flex: 1 1 100%;
+        justify-content: space-between;
+    }
+
+    .sdpp-control-text,
+    .sdpp-control-font {
+        flex: 1 1 100%;
+    }
+
+    /* Collapsed Upload Section (Mobile Only) */
+    .sdpp-upload-section.collapsed {
+        overflow: hidden;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-upload-dropzone {
+        padding: 12px 16px;
+        overflow: hidden;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-dropzone-or {
+        display: none;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-dropzone-content {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 8px;
+        max-width: 100%;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-dropzone-icon {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-dropzone-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-dropzone-content p {
+        margin: 0;
+        font-size: 0;
+        overflow: hidden;
+        flex: 1;
+        min-width: 0;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-dropzone-content p::before {
+        content: 'Carregar novas fotos';
+        font-size: 12px;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-btn {
+        flex-shrink: 0;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .sdpp-upload-section.collapsed .sdpp-upload-hint {
+        display: none;
+    }
+
+    .sdpp-upload-section.collapsed h3 {
+        margin-bottom: 12px;
+        font-size: 14px;
+    }
+
+    .sdpp-footer-status {
+        display: none;
+    }
+}
+
+/* Text Editor Overlays */
+.sdpp-text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    /* Allow clicks to pass through to cropper mostly */
+    z-index: 10;
+    overflow: hidden;
+    /* Boundaries */
+}
+
+/* Allow text drag interaction */
+.sdpp-text-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4px;
+    border: 1px dashed transparent;
+    cursor: move;
+    pointer-events: auto;
+    /* Re-enable pointer events for text */
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    /* Default centering transform removed as we use x/y now */
+    text-align: center;
+    line-height: 1.2;
+}
+
+.sdpp-text-element:hover,
+.sdpp-text-element.active {
+    border-color: var(--sdpp-primary);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Controls Container */
+#text-controls-container {
+    width: 100%;
+}
+
+.sdpp-text-layers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.sdpp-text-layers-header h4 {
+    margin: 0;
+    font-size: 14px;
+    color: var(--sdpp-gray-700);
+}
+
+.sdpp-text-layers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.sdpp-text-layer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px;
+    background: var(--sdpp-gray-50);
+    border: 1px solid var(--sdpp-gray-200);
+    border-radius: var(--sdpp-radius-sm);
+    transition: all 0.2s;
+}
+
+.sdpp-text-layer-item.active {
+    border-color: var(--sdpp-primary);
+    box-shadow: 0 0 0 2px var(--sdpp-primary-light);
+}
+
+.sdpp-layer-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    padding: 4px;
+}
+
+.sdpp-layer-input:focus {
+    outline: none;
+}
+
+.sdpp-layer-delete {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    color: var(--sdpp-danger);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.sdpp-layer-delete:hover {
+    background: var(--sdpp-danger-light);
+}
+
+/* Layer Tools */
+.sdpp-text-tools {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+    background: var(--sdpp-gray-50);
+    border-radius: var(--sdpp-radius-sm);
+    border: 1px solid var(--sdpp-gray-200);
+}
+
+.sdpp-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sdpp-form-control {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid var(--sdpp-gray-300);
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.sdpp-color-picker {
+    width: 100%;
+    height: 32px;
+    padding: 2px;
+    border: 1px solid var(--sdpp-gray-300);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sdpp-tools-row {
+    grid-column: span 2;
+    display: flex;
+    gap: 8px;
+}
+
+.sdpp-tool-btn {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid var(--sdpp-gray-300);
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.sdpp-tool-btn.active {
+    background: var(--sdpp-primary);
+    color: white;
+    border-color: var(--sdpp-primary);
+}
+
+/* Update preview container to relative for absolute overlay */
+.sdpp-cropper-wrapper {
+    position: relative;
+}
+
+/* Ensure controls grouping */
+.sdpp-control-group label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--sdpp-gray-500);
+    font-weight: 600;
+}
+
+.sdpp-editor-main {
+    flex-direction: column;
+}
+
+.sdpp-editor-sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sdpp-upload-section,
+.sdpp-thumbnails-section {
+    flex: 1;
+    min-width: 280px;
+}
+
+.sdpp-thumbnails-grid {
+    max-height: 200px;
+}
+
+
+@media (max-width: 768px) {
+    .sdpp-editor-header-inner {
+        flex-wrap: wrap;
+        padding: 12px 16px;
+        height: auto;
+    }
+
+    .sdpp-editor-order-info {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+
+    .sdpp-editor-main {
+        padding: 16px;
+    }
+
+    .sdpp-editor-sidebar {
+        flex-direction: column;
+    }
+
+    .sdpp-editor-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sdpp-control-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .sdpp-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer Responsive */
+    .sdpp-editor-footer {
+        height: auto !important;
+        padding: 8px 0;
+    }
+
+    .sdpp-footer-inner {
+        flex-direction: row;
+        /* Force row */
+        height: auto;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .sdpp-footer-left {
+        width: auto;
+        text-align: left;
+        order: 1;
+        flex: 0 0 auto;
+        /* Don't grow */
+    }
+
+    .sdpp-footer-right {
+        width: auto;
+        /* Let it shrink if needed */
+        justify-content: flex-end;
+        order: 2;
+        gap: 8px;
+        flex: 1;
+        /* Take remaining space */
+    }
+
+    .sdpp-footer-right .sdpp-btn {
+        flex: 0 1 auto;
+        /* Allow shrinking */
+        padding: 8px 12px;
+        /* Smaller padding */
+        font-size: 13px;
+        /* Smaller font */
+        justify-content: center;
+    }
+
+    .sdpp-footer-right .sdpp-btn-icon {
+        padding: 0;
+        width: 36px;
+        /* Smaller icon button */
+        height: 36px;
+    }
+
+    .sdpp-footer-status {
+        display: block !important;
+        text-align: left;
+        width: auto;
+        font-size: 13px;
+        line-height: 1.2;
+        max-width: 100px;
+        /* Prevent it from taking too much space */
+    }
+}
+
+/* Modal Close & Email Collection */
+.sdpp-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: var(--sdpp-gray-400);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.sdpp-modal-close:hover {
+    background: var(--sdpp-gray-100);
+    color: var(--sdpp-danger);
+}
+
+.sdpp-email-collection {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--sdpp-gray-200);
+    text-align: left;
+}
+
+.sdpp-email-collection label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--sdpp-gray-700);
+}
+
+.sdpp-email-input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.sdpp-email-input-group input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--sdpp-gray-300);
+    border-radius: var(--sdpp-radius-sm);
+}
+
+.sdpp-email-input-group input:focus {
+    outline: none;
+    border-color: var(--sdpp-primary);
+    box-shadow: 0 0 0 3px var(--sdpp-primary-light);
+}
+
+/* Safe Zone Border */
+.cropper-container {
+    border: 2px dashed #cccccc;
+    /* Safe zone indicator */
+    box-sizing: border-box;
+}
+
+/* Remove default crop box outline and handles */
+.cropper-view-box {
+    outline: none !important;
+}
+
+.cropper-point,
+.cropper-line,
+.cropper-dashed,
+.cropper-center {
+    display: none !important;
+}
+
+/* Ensure image is fully visible/manipulable */
+.cropper-modal {
+    opacity: 0 !important;
+    /* Make sure no dark overlay */
+}
+
+/* =========================================
+   Borderless Mode (3x3 Sem Borda)
+   ========================================= */
+
+.sdpp-mode-borderless .sdpp-polaroid-frame {
+    padding: 0;
+    background: transparent;
+    box-shadow: var(--sdpp-shadow-lg);
+    /* Keep shadow for visibility against bg */
+    border-radius: 0;
+}
+
+.sdpp-mode-borderless .sdpp-cropper-wrapper {
+    border-radius: 0;
+    background: #ccc;
+    /* Placeholder color similar to spec */
+    aspect-ratio: 25/32 !important;
+    /* Force new aspect ratio */
+}
+
+/* Hide footer in editor for borderless mode (since no text) */
+.sdpp-mode-borderless .sdpp-polaroid-footer {
+    display: none;
+}
+
+/* Adjust Grid Preview for Borderless */
+.sdpp-mode-borderless .sdpp-grid-container {
+    padding: 2px !important;
+    /* 2mm visually approx */
+    gap: 1px !important;
+    /* 0.3mm visually approx */
+    background: white;
+    /* Sheet background */
+}
+
+.sdpp-mode-borderless .sdpp-grid-item {
+    border: none !important;
+    border-radius: 0 !important;
+    background: #ccc;
+    box-shadow: none !important;
+    /* Flat look inside sheet */
+    aspect-ratio: 25/32 !important;
+}
+
+.sdpp-mode-borderless .sdpp-grid-item img {
+    border-radius: 0 !important;
+}
+
+/* Hide or adjust controls that don't apply */
+.sdpp-mode-borderless .sdpp-text-overlay,
+.sdpp-mode-borderless .sdpp-emoji-overlay {
+    display: none !important;
+}
+
+/* ==========================================
+   Borderless Mode (3x3 Sem Borda) - CLEAN
+   ========================================== */
+
+.sdpp-mode-borderless .sdpp-polaroid-frame {
+    padding: 0;
+    background: transparent;
+    box-shadow: var(--sdpp-shadow-lg);
+    border-radius: 0;
+}
+
+.sdpp-mode-borderless .sdpp-cropper-wrapper {
+    border-radius: 0;
+    background: #ccc;
+    aspect-ratio: 773/1024 !important;
+}
+
+.sdpp-mode-borderless .sdpp-polaroid-footer {
+    display: none;
+}
+
+.sdpp-mode-borderless .sdpp-grid-container {
+    padding: 2px !important;
+    gap: 1px !important;
+    background: white;
+}
+
+.sdpp-mode-borderless .sdpp-grid-item {
+    border: none !important;
+    border-radius: 0 !important;
+    background: #ccc;
+    box-shadow: none !important;
+    aspect-ratio: 773/1024 !important;
+}
+
+.sdpp-mode-borderless .sdpp-grid-item img {
+    border-radius: 0 !important;
+}
+
+.sdpp-mode-borderless .sdpp-text-overlay,
+.sdpp-mode-borderless .sdpp-emoji-overlay {
+    display: none !important;
+}
+
+
+/* UI Improvements */
+.sdpp-text-layers-header h4,
+.sdpp-emoji-layers-header h4 {
+    font-size: 20px !important;
+    font-weight: 600;
+}
+
+/* Hide Emoji Button */
+.sdpp-emoji-control {
+    display: none !important;
+}
+
+/* Modal Responsivo Mobile */
+@media (max-width: 480px) {
+    .sdpp-modal-content {
+        padding: 24px 16px;
+        max-width: 95%;
+        width: 95%;
+    }
+
+    .sdpp-modal-content h2 {
+        font-size: 20px;
+    }
+
+    .sdpp-modal-content p {
+        font-size: 14px;
+    }
+
+    .sdpp-success-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .sdpp-success-header h2 {
+        font-size: 20px;
+    }
+
+    .sdpp-email-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #customer-email {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #save-email-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sdpp-email-collection p {
+        font-size: 13px;
+    }
+}

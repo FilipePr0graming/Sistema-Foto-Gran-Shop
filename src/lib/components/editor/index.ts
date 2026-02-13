@@ -1,0 +1,10 @@
+export { default as EditorShell } from './EditorShell.svelte';
+export { default as Sidebar } from './Sidebar.svelte';
+export { default as PhotoGallery } from './PhotoGallery.svelte';
+export { default as BatchActions } from './BatchActions.svelte';
+export { default as SlotNavigator } from './SlotNavigator.svelte';
+export { default as CanvasStage } from './CanvasStage.svelte';
+export { default as CaptionEditor } from './CaptionEditor.svelte';
+export { default as BottomBar } from './BottomBar.svelte';
+export { default as ConfirmDialog } from './ConfirmDialog.svelte';
+export { default as SidebarSection } from './SidebarSection.svelte';
